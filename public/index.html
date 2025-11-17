@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Bingo Asteria Perú — Sorteos PRO</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="watermark" aria-hidden="true">
+    <img src="/assets/logo.png" alt="Bingo Asteria Perú watermark">
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="/assets/logo.png" alt="Bingo Asteria Perú" class="logo">
+      <div class="site-meta">
+        <h1>Bingo Asteria Perú</h1>
+        <a class="domain" href="https://bingoasteriaperu.online" target="_blank">bingoasteriaperu.online</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="left">
+      <div class="ball-wrap">
+        <div id="ball" class="ball">--</div>
+        <div class="ball-shadow"></div>
+      </div>
+
+      <div class="controls">
+        <div class="row">
+          <label>Rango:</label>
+          <select id="rangeSelect">
+            <option value="50">1 - 50</option>
+            <option value="100" selected>1 - 100</option>
+            <option value="500">1 - 500</option>
+            <option value="1000">1 - 1000</option>
+            <option value="custom">Personalizado...</option>
+          </select>
+          <input id="customMax" type="number" min="10" max="1000" placeholder="Máx" style="display:none;width:86px">
+        </div>
+
+        <div class="row">
+          <button id="drawBtn" class="btn primary">SORTEAR</button>
+          <button id="autoBtn" class="btn">AUTO</button>
+          <button id="resetBtn" class="btn ghost">REINICIAR</button>
+        </div>
+
+        <div class="row small-controls">
+          <label>Voz</label>
+          <select id="voiceSelect">
+            <option value="female" selected>Femenina</option>
+            <option value="male">Masculina</option>
+            <option value="robot">Robot</option>
+          </select>
+
+          <label>Velocidad</label>
+          <select id="voiceRate">
+            <option value="0.9">Lenta</option>
+            <option value="1.0" selected>Normal</option>
+            <option value="1.2">Rápida</option>
+          </select>
+
+          <label>Voz ON</label>
+          <input id="soundToggle" type="checkbox" checked>
+        </div>
+
+        <div class="stats">
+          <div>Números sorteados: <strong id="countDrawn">0</strong></div>
+          <div>Ganadores objetivo: <select id="winnersCount"><option>1</option><option selected>3</option><option>5</option></select></div>
+        </div>
+      </div>
+
+      <div class="history" id="history">
+        <h3>Historial</h3>
+        <div id="historyList" class="history-list"></div>
+      </div>
+    </section>
+
+    <aside class="right">
+      <div class="payments card">
+        <h3>Donar / Comprar cartilla</h3>
+        <div class="pay-row">
+          <div>
+            <div class="pay-type">Yape / Dale / Plin</div>
+            <div class="pay-num">+51 905 888 379</div>
+            <div class="pay-note">También puedes usar Plin o cualquier app bancaria. Envía comprobante por WhatsApp.</div>
+          </div>
+          <div>
+            <button class="btn" id="copyYape">Copiar número</button>
+          </div>
+        </div>
+
+        <div class="qr-row">
+          <img src="/assets/logo.png" alt="QR placeholder" class="qr" />
+          <div class="qr-note">Escanea para pagar (si tienes QR coloca aquí)</div>
+        </div>
+      </div>
+
+      <div class="players card">
+        <h3>Jugadores</h3>
+        <div class="add-player">
+          <input id="playerName" placeholder="Nombre" />
+          <input id="playerNums" placeholder="Números (ej. 5,12,33,78,99)" />
+          <button id="addPlayer" class="btn small">Agregar</button>
+        </div>
+        <div id="playersList" class="players-list"></div>
+      </div>
+
+      <div class="winners card">
+        <h3>Ganadores</h3>
+        <div id="winnersBox"></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">© 2025 Bingo Asteria Perú — Prohibida la copia. Visita <a href="https://bingoasteriaperu.online">bingoasteriaperu.online</a></footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
